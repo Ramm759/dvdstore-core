@@ -9,11 +9,16 @@ import java.util.List;
 //@Repository
 public class MemoryMovieRepository implements MovieRepositoryInterface {
 
-    private final List<Movie> movies = new ArrayList<>();
+    private final List<Movie> movies=new ArrayList<>();
 
-    public void add(Movie movie) {
+    public void add(Movie movie){
         movies.add(movie);
-        System.out.println("The movie " + movie.getTitle() + " has been added.");
+        System.out.println("The movie "+movie.getTitle()+" has been added.");
+    }
+
+    @Override
+    public List<Movie> list() {
+        return movies;
     }
 
 }
