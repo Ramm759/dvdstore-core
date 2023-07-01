@@ -2,6 +2,7 @@ package com.mycompany.dvdstore.repository.memory;
 
 import com.mycompany.dvdstore.entity.Movie;
 import com.mycompany.dvdstore.repository.MovieRepositoryInterface;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +10,7 @@ import java.util.List;
 //@Repository
 public class MemoryMovieRepository implements MovieRepositoryInterface {
 
-    private final List<Movie> movies=new ArrayList<>();
+    private List<Movie> movies=new ArrayList<>();
 
     public void add(Movie movie){
         movies.add(movie);
