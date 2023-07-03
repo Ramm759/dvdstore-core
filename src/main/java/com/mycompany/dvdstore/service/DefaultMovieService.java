@@ -8,21 +8,23 @@ import java.util.List;
 
 @Service
 public class DefaultMovieService implements MovieServiceInterface{
-
-    // @Autowired
     private final MovieRepositoryInterface movieRepository;
 
     public DefaultMovieService(MovieRepositoryInterface movieRepository) {
         this.movieRepository = movieRepository;
     }
 
-    public void registerMovie(Movie movie){
-
-        movieRepository.add(movie);
+    public Movie registerMovie(Movie movie){
+        return movieRepository.add(movie);
     }
 
     @Override
     public List<Movie> getMovieList() {
         return movieRepository.list();
+    }
+
+    @Override
+    public Movie getMovieById(long id) {
+        return movieRepository.getById(id);
     }
 }
